@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <div class="container bg-white shadow-sm py-4 px-4 rounded" #fattura>
+      <div class="container bg-white shadow-sm p-3 rounded" #fattura>
         <div class="row mb-4">
           <div class="col-6 text-start">
             <h5 class="fw-bold">Mittente:</h5>
@@ -139,72 +139,76 @@
             </p>
           </div>
         </div>
-        <table class="table table-bordered mt-4">
-          <thead class="table-dark">
-            <tr>
-              <th>Descrizione</th>
-              <th>Quantità</th>
-              <th>Prezzo Unitario</th>
-              <th>IVA%</th>
-              <th>Totale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Trasporto e contatore</td>
-              <td>1</td>
-              <td>&euro; 11,69</td>
-              <td>22%</td>
-              <td>14,26</td>
-            </tr>
-            <tr>
-              <td>Oneri di sistema</td>
-              <td>1</td>
-              <td>&euro; 13,10</td>
-              <td>22%</td>
-              <td>15,98</td>
-            </tr>
-            <tr>
-              <td>Canone RAI</td>
-              <td>1</td>
-              <td>&euro; 7,00</td>
-              <td></td>
-              <td>7,00</td>
-            </tr>
-            <tr></tr>
-            <tr>
-              <td>Imposte</td>
-              <td>1</td>
-              <td>&euro; 0,31</td>
-              <td>22%</td>
-              <td>0.37</td>
-            </tr>
-            <tr>
-              <td>Spesa energetica</td>
-              <td></td>
-              <td>0,16 €/kWh</td>
-              <td>22%</td>
-              <td>
-                {{ form.get("importoFattura")?.value | currency : "EUR" }}
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th colspan="4" class="text-end">Totale</th>
-              <th>
-                {{
-                  (form.get("importoFattura")?.value * 122) / 100 +
-                    14.26 +
-                    15.98 +
-                    7 +
-                    0.37 | currency : "EUR"
-                }}
-              </th>
-            </tr>
-          </tfoot>
-        </table>
-        <div class="row mt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th class="w-25 d-none d-sm-table-cell">Descrizione</th>
+                <th class="d-sm-none">Desc.</th>
+                <th>Qtà</th>
+                <th>P.Unit.</th>
+                <th>IVA%</th>
+                <th>Totale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Trasporto e contatore</td>
+                <td>1</td>
+                <td>&euro; 11,69</td>
+                <td>22%</td>
+                <td>14,26</td>
+              </tr>
+              <tr>
+                <td>Oneri di sistema</td>
+                <td>1</td>
+                <td>&euro; 13,10</td>
+                <td>22%</td>
+                <td>15,98</td>
+              </tr>
+              <tr>
+                <td>Canone RAI</td>
+                <td>1</td>
+                <td>&euro; 7,00</td>
+                <td></td>
+                <td>7,00</td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>Imposte</td>
+                <td>1</td>
+                <td>&euro; 0,31</td>
+                <td>22%</td>
+                <td>0.37</td>
+              </tr>
+              <tr>
+                <td>Spesa energetica</td>
+                <td></td>
+                <td>0,16 €/kWh</td>
+                <td>22%</td>
+                <td>
+                  {{ form.get("importoFattura")?.value | currency : "EUR" }}
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4" class="text-end">Totale</th>
+                <th>
+                  {{
+                    (form.get("importoFattura")?.value * 122) / 100 +
+                      14.26 +
+                      15.98 +
+                      7 +
+                      0.37 | currency : "EUR"
+                  }}
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="mt-3">
           <div class="col-12 text-start">
             <h5 class="fw-bold">Metodo di Pagamento:</h5>
             <p class="mb-1"><strong>Bonifico Bancario</strong></p>

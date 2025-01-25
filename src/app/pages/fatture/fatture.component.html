@@ -1,31 +1,36 @@
 <div class="container my-5">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1>Fatture</h1>
+  <!-- Header section -->
+  <div
+    class="d-flex flex-sm-row justify-content-between align-items-center mb-3 gap-2"
+  >
+    <h1 class="h2">Gestisci Fatture</h1>
     <button
-      class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+      class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1 w-sm-auto"
       routerLink="/fatture/newfattura"
     >
       <i class="bi bi-plus-circle fs-5 me-2"></i>Fattura
     </button>
   </div>
-  <div class="table-responsive rounded">
+
+  <!-- Table section -->
+  <div class="col-12 table-responsive rounded">
     <table class="table table-striped">
       <thead class="table-dark">
         <tr>
-          <th>Data</th>
-          <th>Numero Fattura</th>
+          <th class="d-none d-md-table-cell">Data</th>
+          <th>Numero</th>
           <th>Destinatario</th>
-          <th>Stato</th>
-          <th>Importo Finale</th>
+          <th class="d-none d-sm-table-cell">Stato</th>
+          <th>Importo</th>
           <th>Azioni</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let fattura of fattureArray">
-          <td>{{ fattura.data }}</td>
+          <td class="d-none d-md-table-cell">{{ fattura.data }}</td>
           <td>{{ fattura.numero }}</td>
           <td>{{ fattura.cliente.ragioneSociale }}</td>
-          <td>
+          <td class="d-none d-sm-table-cell">
             <span [ngClass]="getBadgeClass(fattura.statoFattura.nome)">
               {{ fattura.statoFattura.nome }}
             </span>
@@ -44,10 +49,13 @@
     </table>
   </div>
 
-  <div class="d-flex justify-content-between align-items-center">
-    <p>Pagina {{ currentPage }} di {{ pageFatture.totalPages }}</p>
-    <nav>
-      <ul class="pagination mb-0">
+  <!-- Pagination section -->
+  <div
+    class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2"
+  >
+    <p class="mb-0">Pagina {{ currentPage }} di {{ pageFatture.totalPages }}</p>
+    <nav aria-label="Page navigation">
+      <ul class="pagination mb-0 justify-content-center">
         <li class="page-item" [class.disabled]="currentPage === 1">
           <a
             class="btn bg-white mx-1 border-0 shadow-sm"
@@ -56,7 +64,7 @@
           >
         </li>
         <li
-          class="page-item"
+          class="page-item d-none d-sm-block"
           *ngFor="
             let page of [].constructor(pageFatture?.totalPages);
             let i = index
