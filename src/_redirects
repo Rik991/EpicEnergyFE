@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "epic-energy-fe": {
+      "architect": {
+        "build": {
+          "options": {
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/_redirects"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

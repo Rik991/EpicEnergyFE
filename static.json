@@ -1,7 +1,0 @@
-{
-  "root": "dist/epic-energy-fe/browser",
-  "clean_urls": true,
-  "routes": {
-    "/**": "index.html"
-  }
-}
