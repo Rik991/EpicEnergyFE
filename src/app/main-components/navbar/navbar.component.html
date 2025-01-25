@@ -1,6 +1,9 @@
 <header class="d-flex justify-content-center py-3 shadow-sm bg-white">
   <ul class="nav nav-pills">
-    <li class="nav-item mx-2">
+    <li
+      class="nav-item mx-2"
+      [class.d-none]="!isLoggedIn && window.innerWidth < 576"
+    >
       <a
         routerLink="/home"
         class="btn py-1 fw-bolder"
@@ -11,7 +14,10 @@
         <span class="d-none d-sm-inline">Home</span>
       </a>
     </li>
-    <li class="nav-item mx-2">
+    <li
+      class="nav-item mx-2"
+      [class.d-none]="!isLoggedIn && window.innerWidth < 576"
+    >
       <a
         routerLink="/fatture"
         class="btn py-1 fw-bolder"
@@ -21,7 +27,10 @@
         <span class="d-none d-sm-inline">Fatture</span>
       </a>
     </li>
-    <li class="nav-item mx-2">
+    <li
+      class="nav-item mx-2"
+      [class.d-none]="!isLoggedIn && window.innerWidth < 576"
+    >
       <a
         routerLink="/clienti"
         class="btn py-1 fw-bolder"
@@ -37,8 +46,7 @@
         class="btn py-1 fw-bolder"
         routerLinkActive="activeNav"
       >
-        <i class="bi bi-box-arrow-in-right d-sm-none"></i>
-        <span class="d-none d-sm-inline">LogIn</span>
+        <span>Login</span>
       </a>
     </li>
     <li *ngIf="!isLoggedIn" class="nav-item mx-2">
@@ -46,8 +54,9 @@
         routerLink="/auth/register"
         class="btn py-1 fw-bolder"
         routerLinkActive="activeNav"
-        >Register</a
       >
+        <span>Register</span>
+      </a>
     </li>
     <li *ngIf="isLoggedIn" (click)="logout()" class="nav-item mx-2">
       <a class="btn py-1 fw-bolder" routerLinkActive="activeNav">Log out</a>
