@@ -1,22 +1,28 @@
 export const environment = {
-  registerUrl: 'http://localhost:8080/api/auth/register',
-  loginUrl: 'http://localhost:8080/api/auth/login',
-  clientiUrl: 'http://localhost:8080/api/clienti',
+  registerUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/auth/register',
+  loginUrl: 'https://epicenergybe-0630f124f846.herokuapp.com/api/auth/login',
+  clientiUrl: 'https://epicenergybe-0630f124f846.herokuapp.com/api/clienti',
   clientiByRagioneSocialeUrl:
-    'http://localhost:8080/api/clienti/search_by_ragione_sociale',
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/clienti/search_by_ragione_sociale',
   clientiByRangeDataInserimentoUrl:
-    'http://localhost:8080/api/clienti/registrazioni_tra_date_inserimento',
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/clienti/registrazioni_tra_date_inserimento',
   clientiByRangeFatturatoAnnualeUrl:
-    'http://localhost:8080/api/clienti/fatturato_annuale_range',
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/clienti/fatturato_annuale_range',
   clientiByDataUltimoContattoUrl:
-    'http://localhost:8080/api/clienti/date_ultimo_contatto',
-  fattureUrl: 'http://localhost:8080/api/fatture',
-  fattureByStatoFatturaUrl: 'http://localhost:8080/api/fatture/stato_fattura',
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/clienti/date_ultimo_contatto',
+  fattureUrl: 'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture',
+  fattureByStatoFatturaUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture/stato_fattura',
   fattureByRagioneSocialeUrl:
-    'http://localhost:8080/api/fatture/ragione_sociale',
-  fattureByRangeImportoUrl: 'http://localhost:8080/api/fatture/importo_range',
-  fattureByRangeDataUrl: 'http://localhost:8080/api/fatture/data',
-  fattureByAnnoUrl: 'http://localhost:8080/api/fatture/anno',
-  statoFatturaUrl: 'http://localhost:8080/api/stato_fattura',
-  comuneUrl: 'http://localhost:8080/api/comuni',
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture/ragione_sociale',
+  fattureByRangeImportoUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture/importo_range',
+  fattureByRangeDataUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture/data',
+  fattureByAnnoUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/fatture/anno',
+  statoFatturaUrl:
+    'https://epicenergybe-0630f124f846.herokuapp.com/api/stato_fattura',
+  comuneUrl: 'https://epicenergybe-0630f124f846.herokuapp.com/api/comuni',
 };
