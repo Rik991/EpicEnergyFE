@@ -25,7 +25,13 @@ hr {
 }
 
 .full {
-  height: -webkit-fill-available;
+  height: -webkit-fill-available; /* Safari */
+  height: -moz-available; /* Firefox */
+  height: stretch; /* Standard syntax */
+  height: fill-available; /* New standard syntax */
+  min-height: -webkit-fill-available; /* iOS Safari */
+  min-height: -moz-available; /* Firefox */
+  min-height: stretch; /* Standard syntax */
 }
 
 button:hover {
