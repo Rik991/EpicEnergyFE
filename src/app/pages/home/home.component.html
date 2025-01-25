@@ -1,378 +1,343 @@
-<section class="container-fluid mt-4">
-  <div class="row">
-    <!-- Sidebar - Collapsible on mobile -->
-    <div class="col-12 col-md-3 col-lg-2">
+<section class="container">
+  <div class="row mt-4 mb-2">
+    <!-- bottoni mobile  -->
+
+    <div class="col-12 d-lg-none d-flex justify-content-around">
       <button
-        class="btn btn-primary d-md-none mb-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#sidebar"
-        aria-expanded="false"
-        aria-controls="sidebar"
+        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+        routerLink="/clienti/register"
       >
-        <i class="bi bi-list"></i> Menu
+        <i class="bi bi-plus-circle fs-5 me-2"></i>Cliente
       </button>
 
-      <div class="collapse d-md-block" id="sidebar">
-        <div
-          class="d-flex flex-column flex-shrink-0 px-3 py-4 navSide rounded-4"
-        >
-          <div
-            class="nav-item align-items-center btn w-100 rounded-3 p-1 text-start fw-semibold text-bg-profile d-flex justify-content-between"
-          >
-            <div class="d-flex align-items-center">
-              <img
-                src="{{ profileImg }}"
-                class="avatar rounded-3 object-fit-cover"
-              />
-              <div class="ms-3 fs-5" aria-current="page">{{ name }}</div>
-            </div>
-            <i class="bi bi-caret-right-fill fs-4"></i>
-          </div>
+      <button
+        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+        routerLink="/fatture/newfattura"
+      >
+        <i class="bi bi-plus-circle fs-5 me-2"></i>Fattura
+      </button>
+    </div>
+  </div>
 
-          <hr />
-
-          <!-- Sidebar Sections -->
-          <div class="sidebar-sections">
-            <div class="mb-3">
-              <p class="text-white fw-bold">MAIN</p>
-              <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold d-flex text-white align-items-center"
-                  >
-                    <i class="bi bi-rocket-takeoff fs-5 me-2"></i>Overview
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <hr />
-
-            <div class="mb-3">
-              <p class="text-white fw-bold">QUICK LINK</p>
-              <ul class="nav nav-pills flex-column">
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                    routerLink="/clienti/register"
-                  >
-                    <i class="bi bi-plus-circle fs-5 me-2"></i>Cliente
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                    routerLink="/fatture/newfattura"
-                  >
-                    <i class="bi bi-plus-circle fs-5 me-2"></i>Fattura
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                  >
-                    <i class="bi bi-hourglass fs-5 me-2"></i>Pending
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                  >
-                    <i class="bi bi-send fs-5 me-2"></i>Send
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <hr />
-
-            <div>
-              <p class="text-white fw-bold">SETTINGS</p>
-              <ul class="nav nav-pills flex-column">
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                  >
-                    <i class="bi bi-gear-wide fs-5 me-2"></i>Settings
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a
-                    class="btn w-100 rounded-4 py-2 px-3 text-start fw-semibold text-white d-flex align-items-center"
-                  >
-                    <i class="bi bi-info-square fs-5 me-2 text-white"></i>Help
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+  <div class="row gap-5">
+    <!-- inizio section nera  -->
+    <div
+      class="col-3 d-flex flex-column flex-shrink-0 px-3 py-4 navSide rounded-1 d-none d-lg-block"
+    >
+      <div
+        class="nav-item align-items-center btn w-100 rounded-1 p-1 text-start fw-semibold text-bg-profile d-flex justify-content-between"
+      >
+        <div class="d-flex align-items-center">
+          <img
+            src="{{ profileImg }}"
+            class="avatar rounded-1 object-fit-cover"
+          />
+          <div class="ms-3 fs-5" aria-current="page">{{ name }}</div>
         </div>
+        <i class="bi bi-caret-right-fill fs-4"></i>
       </div>
+      <hr />
+      <p class="text-white fw-">QUICK LINK</p>
+      <ul class="nav nav-pills flex-column">
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+            routerLink="/clienti/register"
+          >
+            <i class="bi bi-plus-circle fs-5 me-2"></i>Cliente</a
+          >
+        </li>
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+            routerLink="/fatture/newfattura"
+          >
+            <i class="bi bi-plus-circle fs-5 me-2"></i>Fattura</a
+          >
+        </li>
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+          >
+            <i class="bi bi-hourglass fs-5 me-2"></i>Pending
+          </a>
+        </li>
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+          >
+            <i class="bi bi-send fs-5 me-2"></i>Send</a
+          >
+        </li>
+      </ul>
+      <hr />
+      <p class="text-white fw-">SETTINGS</p>
+      <ul class="nav nav-pills flex-column">
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+          >
+            <i class="bi bi-gear-wide fs-5 me-2"></i>
+            Stettings</a
+          >
+        </li>
+        <li>
+          <a
+            class="btn w-100 rounded-1 py-2 px-3 my-2 text-start fw-semibold text-white d-flex align-items-center"
+          >
+            <i class="bi bi-info-square fs-5 me-2 text-white"></i>
+            Help</a
+          >
+        </li>
+      </ul>
     </div>
 
-    <!-- Main Content Area -->
-    <div class="col-12 col-md-9 col-lg-10 mt-3 mt-md-0">
-      <div class="container-fluid">
-        <h1 class="mb-4">
+    <!-- fine section  -->
+
+    <div class="col">
+      <div class="d-flex justify-content-between">
+        <h1>
           Welcome <span class="text-info">{{ name }}</span>
         </h1>
+      </div>
+      <div class="row">
+        <!-- da qua -->
 
-        <div class="row">
-          <!-- Invoice Filters Section -->
-          <div class="col-12 col-lg-6 mb-4">
-            <div class="bg-white shadow-sm rounded-3 p-3 h-100">
-              <h5>Filtra fatture per:</h5>
-              <div class="d-flex flex-column">
-                <div class="d-flex flex-wrap gap-2">
-                  <div class="w-100 mb-2">
-                    <button
-                      class="btn bg-info text-white fw-bolder shadow-sm rounded-3 w-100"
-                      (click)="sendDataFatture(1)"
-                      routerLink="/fatture"
-                    >
-                      Tutte le fatture
-                    </button>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendDataFatture(2)"
-                        routerLink="/fatture"
-                      >
-                        Ragione sociale
-                      </button>
-                      <input
-                        class="form-control"
-                        type="text"
-                        [(ngModel)]="dataFatture.ragioneSociale"
-                        placeholder="Nome Ragione Sociale"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendDataFatture(3)"
-                        routerLink="/fatture"
-                      >
-                        <label for="statoFattura"
-                          >Filtra per stato fattura:</label
-                        >
-                        Stato fattura
-                      </button>
-                      <select
-                        id="statoFattura"
-                        class="form-select my-2"
-                        [(ngModel)]="dataFatture.statoFattura"
-                        (change)="sendDataFatture(3)"
-                      >
-                        <option value="">Seleziona stato</option>
-                        <option
-                          *ngFor="let stato of statoFatture"
-                          [value]="stato.nome"
-                        >
-                          {{ stato.nome }}
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendDataFatture(4)"
-                        routerLink="/fatture"
-                      >
-                        Filtra per Data
-                      </button>
-                      <label for="dataInizio"><strong>Inizio:</strong></label>
-                      <input
-                        id="dataInizio"
-                        class="form-control my-2"
-                        type="date"
-                        [(ngModel)]="dataFatture.dataIniziale"
-                      />
-                      <label for="dataFine" class="mt-2"
-                        ><strong>Fine:</strong></label
-                      >
-                      <input
-                        id="dataFine"
-                        class="form-control my-2"
-                        type="date"
-                        [(ngModel)]="dataFatture.dataFinale"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendDataFatture(5)"
-                        routerLink="/fatture"
-                      >
-                        Filtra per Anno
-                      </button>
-                      <label for="anno"><strong>Anno:</strong></label>
-                      <input
-                        id="anno"
-                        class="form-control my-2"
-                        type="number"
-                        [(ngModel)]="dataFatture.anno"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendDataFatture(6)"
-                        routerLink="/fatture"
-                      >
-                        Filtra per Importo
-                      </button>
-                      <label for="minImporto"
-                        ><strong>Importo Minimo:</strong></label
-                      >
-                      <input
-                        id="minImporto"
-                        class="form-control my-2"
-                        type="number"
-                        [(ngModel)]="dataFatture.importoMin"
-                      />
-                      <label for="maxImporto" class="mt-2"
-                        ><strong>Importo Massimo:</strong></label
-                      >
-                      <input
-                        id="maxImporto"
-                        class="form-control my-2"
-                        type="number"
-                        [(ngModel)]="dataFatture.importoMax"
-                      />
-                    </div>
-                  </div>
-                </div>
+        <div class="col bg-white shadow-sm rounded-1 m-3 p-3 h-100">
+          <h5>Filtra fatture per:</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-wrap gap-2">
+              <div class="my-1 p-2 bg-standard-leggero shadow-sm rounded-1">
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm p-auto rounded-1 full"
+                  (click)="sendDataFatture(1)"
+                  routerLink="/fatture"
+                >
+                  Tutte le fatture
+                </button>
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendDataFatture(2)"
+                  routerLink="/fatture"
+                >
+                  Ragione sociale
+                </button>
+                <input
+                  class="form-control my-2"
+                  type="text"
+                  [(ngModel)]="dataFatture.ragioneSociale"
+                  placeholder="Nome Ragione Sociale"
+                />
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendDataFatture(3)"
+                  routerLink="/fatture"
+                >
+                  Stato fattura
+                </button>
+                <select
+                  id="statoFattura"
+                  class="form-select my-2"
+                  [(ngModel)]="dataFatture.statoFattura"
+                  (change)="sendDataFatture(3)"
+                >
+                  <option value="">Seleziona stato</option>
+                  <option
+                    *ngFor="let stato of statoFatture"
+                    [value]="stato.nome"
+                  >
+                    {{ stato.nome }}
+                  </option>
+                </select>
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendDataFatture(4)"
+                  routerLink="/fatture"
+                >
+                  Data creazione
+                </button>
+                <label for="dataInizio"><strong>Inizio:</strong></label>
+                <input
+                  id="dataInizio"
+                  class="form-control my-2"
+                  type="date"
+                  [(ngModel)]="dataFatture.dataIniziale"
+                />
+                <label for="dataFine" class="mt-2"
+                  ><strong>Fine:</strong></label
+                >
+                <input
+                  id="dataFine"
+                  class="form-control my-2"
+                  type="date"
+                  [(ngModel)]="dataFatture.dataFinale"
+                />
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendDataFatture(5)"
+                  routerLink="/fatture"
+                >
+                  Fatture per anno
+                </button>
+                <label for="anno"><strong>Anno:</strong></label>
+                <input
+                  id="anno"
+                  class="form-control my-2"
+                  type="number"
+                  [(ngModel)]="dataFatture.anno"
+                />
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendDataFatture(6)"
+                  routerLink="/fatture"
+                >
+                  Importo fattura
+                </button>
+                <label for="minImporto"><strong>Min:</strong></label>
+                <input
+                  id="minImporto"
+                  class="form-control my-2"
+                  type="number"
+                  [(ngModel)]="dataFatture.importoMin"
+                />
+                <label for="maxImporto" class="mt-2"
+                  ><strong> Max:</strong></label
+                >
+                <input
+                  id="maxImporto"
+                  class="form-control my-2"
+                  type="number"
+                  [(ngModel)]="dataFatture.importoMax"
+                />
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Client Filters Section -->
-          <div class="col-12 col-lg-6 mb-4">
-            <div class="bg-white shadow-sm rounded-3 p-3 h-100">
-              <h5>Filtra clienti per:</h5>
-              <div class="d-flex flex-column">
-                <div class="d-flex flex-wrap gap-2">
-                  <div class="w-100 mb-2">
-                    <button
-                      class="btn bg-info text-white fw-bolder shadow-sm rounded-3 w-100"
-                      (click)="sendData(1)"
-                      routerLink="/clienti"
-                    >
-                      Tutti i Clienti
-                    </button>
-                  </div>
+        <!-- Filter Clients Section -->
 
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                        (click)="sendData(2)"
-                        routerLink="/clienti"
-                      >
-                        Ragione sociale
-                      </button>
-                      <input
-                        class="form-control"
-                        type="text"
-                        [(ngModel)]="data.ragioneSociale"
-                        placeholder="Nome Ragione Sociale"
-                      />
-                    </div>
-                  </div>
+        <div class="col bg-white shadow-sm rounded-1 m-3 p-3 h-100">
+          <h5>Filtra clienti per:</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-wrap gap-2">
+              <div class="my-1 p-2 bg-standard-leggero shadow-sm rounded-1">
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm p-auto rounded-1 full"
+                  (click)="sendData(1)"
+                  routerLink="/clienti"
+                >
+                  Tutti i Clienti
+                </button>
+              </div>
+              <!-- ///////////// -->
+              <div
+                class="my-2 d-flex flex-column flex-grow-1 bg-standard-leggero shadow-sm p-2 rounded-1"
+              >
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendData(2)"
+                  routerLink="/clienti"
+                >
+                  Ragione sociale
+                </button>
+                <input
+                  class="form-control my-2"
+                  type="text"
+                  [(ngModel)]="data.ragioneSociale"
+                  placeholder="Nome Ragione Sociale"
+                />
+              </div>
+            </div>
+            <!-- ////////// -->
+            <div class="my-2 bg-standard-leggero shadow-sm p-2 rounded-1">
+              <div class="d-flex flex-column flex-grow-1 gap-2">
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendData(3)"
+                  routerLink="/clienti"
+                >
+                  Data ultimo contatto
+                </button>
+                <button
+                  class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-1"
+                  (click)="sendData(4)"
+                  routerLink="/clienti"
+                >
+                  Data inserimento
+                </button>
+              </div>
+              <div>
+                <p class="m-0 mt-2 fw-semibold"><strong> Inizio</strong></p>
+                <input
+                  class="form-control mb-2"
+                  type="date"
+                  [(ngModel)]="data.dataIniziale"
+                />
+                <p class="m-0 mt-2 fw-semibold"><strong>Fine:</strong></p>
 
-                  <div class="w-100 mb-2">
-                    <div class="bg-standard-leggero shadow-sm p-2 rounded-3">
-                      <div class="d-flex flex-column flex-grow-1 gap-2">
-                        <button
-                          class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                          (click)="sendData(3)"
-                          routerLink="/clienti"
-                        >
-                          Data ultimo contatto
-                        </button>
-                        <button
-                          class="btn bg-info text-white fw-bolder shadow-sm py-2 px-3 rounded-3 w-100 mb-2"
-                          (click)="sendData(4)"
-                          routerLink="/clienti"
-                        >
-                          Data inserimento
-                        </button>
-                      </div>
-                      <div>
-                        <p class="m-0 mt-2 fw-semibold">
-                          <strong>Inizio</strong>
-                        </p>
-                        <input
-                          class="form-control mb-2"
-                          type="date"
-                          [(ngModel)]="data.dataIniziale"
-                        />
-                        <p class="m-0 mt-2 fw-semibold">
-                          <strong>Fine:</strong>
-                        </p>
-                        <input
-                          class="form-control mb-2"
-                          type="date"
-                          [(ngModel)]="data.dataFinale"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="w-100 mb-2">
-                    <div
-                      class="bg-standard-leggero shadow-sm p-2 rounded-3 d-flex flex-column"
-                    >
-                      <button
-                        class="btn bg-info text-white fw-bolder shadow-sm rounded-3 w-100 mb-2"
-                        (click)="sendData(5)"
-                        routerLink="/clienti"
-                      >
-                        Fatturato<br />annuale
-                      </button>
-                      <div class="d-flex">
-                        <div class="w-50 pe-1">
-                          <p class="m-0 mt-2 fw-semibold">
-                            <strong>Da:</strong>
-                          </p>
-                          <input
-                            class="form-control"
-                            type="text"
-                            [(ngModel)]="data.fatturatoMin"
-                            placeholder="1000"
-                          />
-                        </div>
-                        <div class="w-50 ps-1">
-                          <p class="m-0 mt-2 fw-semibold">
-                            <strong>A:</strong>
-                          </p>
-                          <input
-                            class="form-control"
-                            type="text"
-                            [(ngModel)]="data.fatturatoMax"
-                            placeholder="100000"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <input
+                  class="form-control mb-2"
+                  type="date"
+                  [(ngModel)]="data.dataFinale"
+                />
+              </div>
+            </div>
+            <!-- ///////// -->
+            <div
+              class="my-2 bg-standard-leggero shadow-sm p-2 rounded-1 d-flex"
+            >
+              <button
+                class="btn bg-info text-white fw-bolder shadow-sm rounded-1"
+                (click)="sendData(5)"
+                routerLink="/clienti"
+              >
+                Fatturato<br />annuale
+              </button>
+              <div class="d-flex flex-column flex-grow-1">
+                <div class="d-flex">
+                  <p class="m-0 mt-2 ms-3 fw-semibold"><strong>Min:</strong></p>
+                  <input
+                    class="m-2 form-control"
+                    type="text"
+                    [(ngModel)]="data.fatturatoMin"
+                    placeholder="1000"
+                  />
+                </div>
+                <div class="d-flex">
+                  <p class="m-0 mt-2 pe-1 ms-3 fw-semibold">
+                    <strong>Max:</strong>
+                  </p>
+                  <input
+                    class="m-2 form-control"
+                    type="text"
+                    [(ngModel)]="data.fatturatoMax"
+                    placeholder="100000"
+                  />
                 </div>
               </div>
             </div>
