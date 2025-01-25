@@ -1,0 +1,49 @@
+<div class="wallet-card mx-2 my-3 d-flex flex-column">
+  <div class="d-flex align-items-start justify-content-between bg-top p-2">
+    <div class="wallet-icon">
+      <img
+        *ngIf="cliente.logoAziendale"
+        src="{{ cliente.logoAziendale }}"
+        alt="Tron Logo"
+      />
+      <img
+        class="object-fit-cover"
+        *ngIf="!cliente.logoAziendale"
+        src="https://cdn.pixabay.com/photo/2020/06/30/10/23/icon-5355896_960_720.png"
+        alt=""
+      />
+    </div>
+    <div class="d-flex flex-column">
+      <div ngbDropdown container="body">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-sm"
+          ngbDropdownToggle
+        >
+          <i class="bi bi-gear-fill"></i>
+        </button>
+        <div *ngIf="cliente.id" ngbDropdownMenu>
+          <button
+            (click)="visualizza(cliente.id)"
+            routerLinkActive="router-link-active"
+            ngbDropdownItem
+          >
+            Visualizza
+          </button>
+          <button (click)="edit(cliente.id)" ngbDropdownItem>Modifica</button>
+          <div class="dropdown-divider"></div>
+          <button (click)="delete(cliente.id)" ngbDropdownItem>Elimina</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column p-2">
+    <div class="wallet-title">
+      <p class="m-0">{{ cliente.ragioneSociale }}</p>
+    </div>
+    <div class="wallet-subtitle">
+      <p class="m-0">{{ cliente.email }}</p>
+    </div>
+    <p class="m-0 wallet-subtitle">{{ cliente.telefono }}</p>
+  </div>
+</div>

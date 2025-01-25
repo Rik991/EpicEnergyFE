@@ -1,0 +1,215 @@
+/* From Uiverse.io by DavidTM96 */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+  background-color: #fff;
+  //background-color: #0a192f;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgb(95 95 95 / 60%);
+}
+
+.form-field {
+  margin-bottom: 10px; /* Aggiungi spazio uniforme sotto ogni form-field */
+}
+
+.form-heading {
+  text-align: center;
+  margin: 2em;
+  color: rgba(0, 162, 195, 0.7098039216);
+  font-size: 1.2em;
+  background-color: transparent;
+  align-self: center;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 0.6em;
+  border: 1px solid grey;
+  outline: none;
+  color: white;
+  background-color: #f8f7f7;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgba(0, 162, 195, 0.7098039216);
+  padding-inline: 1em;
+}
+
+.sendMessage-btn {
+  cursor: pointer;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(0, 162, 195, 0.7098039216);
+  font-weight: bold;
+  outline: 1px solid rgba(0, 162, 195, 0.7098039216);
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  transition: all ease-in-out 0.3s;
+  background-color: transparent;
+  color: rgba(0, 162, 195, 0.7098039216);
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px rgba(0, 162, 195, 0.7098039216);
+}
+
+.form-card1 {
+  background-image: linear-gradient(
+    163deg,
+    rgba(0, 162, 195, 0.7098039216) 0%,
+    rgba(0, 162, 195, 0.7098039216) 100%
+  );
+  border-radius: 22px;
+  transition: all 0.3s;
+}
+
+.bg-standard-leggero {
+  background-color: rgb(171 243 243 / 49%);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+//
+
+/* From Uiverse.io by AmIt-DasIT */
+.box {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 162, 195, 0.7098039216);
+  border-radius: 25px;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.arrow {
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+}
+
+.box:hover {
+  width: 160px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 162, 195, 0.7098039216),
+    rgba(112, 226, 226, 0.71)
+  );
+}
+
+.box:hover .arrow {
+  display: none;
+}
+
+.box .text {
+  display: none;
+}
+
+.box:hover .text {
+  display: flex;
+  font-size: 16px;
+  font-weight: 550;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.6px;
+  animation: anima 0.6s ease;
+}
+
+@keyframes anima {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.box:active {
+  background: linear-gradient(
+    to right,
+    rgba(0, 162, 195, 0.7098039216),
+    rgba(112, 226, 226, 0.71)
+  );
+}
+
+//
+/* From Uiverse.io by gharsh11032000 */
+.button {
+  position: relative;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 20%;
+  background-color: #e8e8e8;
+  translate: -100% 0;
+  rotate: 45deg;
+  transition: all 0.4s ease;
+}
+
+.conferma-color {
+  color: rgba(0, 162, 195, 0.7098039216);
+}
+
+.conferma-color:hover {
+  color: rgba(255, 255, 255, 0.993);
+}
+
+.button:hover {
+  color: #e8e8e8;
+  background-color: rgba(0, 162, 195, 0.7098039216);
+  box-shadow: 0 0 24px 8px rgba(91, 184, 221, 0.4);
+}
+
+.button:hover:before {
+  translate: 100%;
+}
+
+.button:active {
+  scale: 0.95;
+  box-shadow: 0 0 16px 4px rgba(131, 100, 232, 0.4);
+}

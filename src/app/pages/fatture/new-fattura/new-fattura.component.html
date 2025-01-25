@@ -1,0 +1,219 @@
+<div class="container text-center my-5">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="mb-">
+        <header>{{ isEditMode ? "Modifica Fattura" : "Nuova Fattura" }}</header>
+        <form [formGroup]="form" class="form mx-3" (ngSubmit)="onSubmit()">
+          <div class="select-box">
+            <select
+              formControlName="ragioneSociale"
+              (change)="onClienteChange($event)"
+            >
+              <option value="">Seleziona cliente</option>
+              <option
+                *ngFor="let cliente of clienti"
+                [value]="cliente.ragioneSociale"
+              >
+                {{ cliente.ragioneSociale }}
+              </option>
+            </select>
+          </div>
+          <div class="column">
+            <div class="input-box">
+              <h6 class="text-start">Importo Fattura</h6>
+              <input
+                formControlName="importoFattura"
+                placeholder="Inserisci il totale"
+                type="text"
+              />
+            </div>
+            <div class="input-box">
+              <h6 class="text-start">Data Fatturazione</h6>
+              <input
+                formControlName="dataFatturazione"
+                placeholder="Inserisci data"
+                type="date"
+              />
+            </div>
+          </div>
+
+          <div class="input-box address">
+            <h6 class="text-start">Stato Fattura</h6>
+            <div class="column">
+              <div class="select-box">
+                <select
+                  formControlName="statoFattura"
+                  (change)="onStatoFatturaChange($event)"
+                >
+                  <option
+                    *ngFor="let statoFattura of statoFatture"
+                    [value]="statoFattura.nome"
+                  >
+                    {{ statoFattura.nome | titlecase }}
+                  </option>
+                  <option value="new">Aggiungi nuovo stato...</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="fw-bolder text-white">
+            {{ isEditMode ? "Aggiorna" : "Crea" }}
+          </button>
+        </form>
+      </div>
+      <hr />
+      <div class="d-flex justify-content-between align-items-center mx-3 mb-5">
+        <h6 class="m-0">Salva e Scarica la Fattura!</h6>
+        <button (click)="downloadPDF()">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="30"
+                height="30"
+                class="icon"
+              >
+                <path
+                  d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Download</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="container bg-white shadow-sm py-4 px-4 rounded" #fattura>
+        <div class="row mb-4">
+          <div class="col-6 text-start">
+            <h5 class="fw-bold">Mittente:</h5>
+            <p class="mb-1" style="font-size: 0.9em">
+              Nome Azienda: EpicEnergyT3&copy;
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">Indirizzo: Via Roma, 1</p>
+            <p class="mb-1" style="font-size: 0.9em">Città: Roma, CAP: 00100</p>
+            <p class="mb-1" style="font-size: 0.9em">
+              Partita IVA: 12345678901
+            </p>
+          </div>
+          <div class="col-6 text-end">
+            <h5 class="fw-bold">Fattura</h5>
+            <p class="mb-1" style="font-size: 0.9em">
+              Numero: <span>{{ numeroFattura }}</span>
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              Data:
+              <span>{{
+                form.get("dataFatturazione")?.value | date : "dd/MM/yyyy"
+              }}</span>
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              Stato Fattura:
+              <span>{{ form.get("statoFattura")?.value | uppercase }}</span>
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row mb-4">
+          <div class="col-6 text-start">
+            <h5 class="fw-bold">Destinatario:</h5>
+            <p class="mb-1" style="font-size: 0.9em">
+              <strong>Ragione Sociale:</strong>
+              {{ clienteSelezionato?.ragioneSociale }}
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              <strong>Sede legale:</strong>
+              {{ clienteSelezionato?.sedeLegale?.via }}
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              <strong>Partita IVA:</strong> {{ clienteSelezionato?.partitaIva }}
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              <strong>Email:</strong> {{ clienteSelezionato?.emailContatto }}
+            </p>
+            <p class="mb-1" style="font-size: 0.9em">
+              <strong>Telefono:</strong>
+              {{ clienteSelezionato?.telefonoContatto }}
+            </p>
+          </div>
+        </div>
+        <table class="table table-bordered mt-4">
+          <thead class="table-dark">
+            <tr>
+              <th>Descrizione</th>
+              <th>Quantità</th>
+              <th>Prezzo Unitario</th>
+              <th>IVA%</th>
+              <th>Totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trasporto e contatore</td>
+              <td>1</td>
+              <td>&euro; 11,69</td>
+              <td>22%</td>
+              <td>14,26</td>
+            </tr>
+            <tr>
+              <td>Oneri di sistema</td>
+              <td>1</td>
+              <td>&euro; 13,10</td>
+              <td>22%</td>
+              <td>15,98</td>
+            </tr>
+            <tr>
+              <td>Canone RAI</td>
+              <td>1</td>
+              <td>&euro; 7,00</td>
+              <td></td>
+              <td>7,00</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>Imposte</td>
+              <td>1</td>
+              <td>&euro; 0,31</td>
+              <td>22%</td>
+              <td>0.37</td>
+            </tr>
+            <tr>
+              <td>Spesa energetica</td>
+              <td></td>
+              <td>0,16 €/kWh</td>
+              <td>22%</td>
+              <td>
+                {{ form.get("importoFattura")?.value | currency : "EUR" }}
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="4" class="text-end">Totale</th>
+              <th>
+                {{
+                  (form.get("importoFattura")?.value * 122) / 100 +
+                    14.26 +
+                    15.98 +
+                    7 +
+                    0.37 | currency : "EUR"
+                }}
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="row mt-4">
+          <div class="col-12 text-start">
+            <h5 class="fw-bold">Metodo di Pagamento:</h5>
+            <p class="mb-1"><strong>Bonifico Bancario</strong></p>
+            <p class="mb-1">
+              <strong>IBAN:</strong> IT00X1234567890123456789012
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

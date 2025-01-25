@@ -1,0 +1,85 @@
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Fatture</h1>
+    <button
+      routerLink="/fatture/newfattura"
+      class="btn btn-close-white bg-white shadow-sm rounded-3 px-3 py-2 mx-2 fw-semibold"
+    >
+      Add Fattura
+      <i class="bi bi-plus-square fw-bolder ms-2"></i>
+    </button>
+  </div>
+  <div class="table-responsive rounded">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Data</th>
+          <th>Numero Fattura</th>
+          <th>Destinatario</th>
+          <th>Stato</th>
+          <th>Importo Finale</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fattura of fattureArray">
+          <td>{{ fattura.data }}</td>
+          <td>{{ fattura.numero }}</td>
+          <td>{{ fattura.cliente.ragioneSociale }}</td>
+          <td>
+            <span [ngClass]="getBadgeClass(fattura.statoFattura.nome)">
+              {{ fattura.statoFattura.nome }}
+            </span>
+          </td>
+          <td>{{ fattura.importo | currency : "EUR" }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm shadow-sm mx-2 fw-semibold btn-outline-warning text-black"
+              (click)="editFattura(fattura)"
+            >
+              Gestisci
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <p>Pagina {{ currentPage }} di {{ pageFatture.totalPages }}</p>
+    <nav>
+      <ul class="pagination mb-0">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a
+            class="btn bg-white mx-1 border-0 shadow-sm"
+            (click)="goToPage(currentPage - 1)"
+            >&laquo;</a
+          >
+        </li>
+        <li
+          class="page-item"
+          *ngFor="
+            let page of [].constructor(pageFatture?.totalPages);
+            let i = index
+          "
+        >
+          <a
+            class="btn bg-white mx-1 border-0 shadow-sm"
+            (click)="goToPage(i + 1)"
+            >{{ i + 1 }}</a
+          >
+        </li>
+        <li
+          class="page-item"
+          [class.disabled]="currentPage === pageFatture.totalPages"
+        >
+          <a
+            class="btn bg-white mx-1 border-0 shadow-sm"
+            (click)="goToPage(currentPage + 1)"
+            >&raquo;</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

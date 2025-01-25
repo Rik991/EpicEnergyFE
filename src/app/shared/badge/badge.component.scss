@@ -1,0 +1,56 @@
+.wallet-card {
+  width: 300px;
+  height: 180px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.wallet-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #e8feff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.wallet-icon img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.wallet-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.wallet-subtitle {
+  color: gray;
+  font-size: 14px;
+}
+.wallet-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: gray;
+  text-decoration: none;
+}
+.wallet-copy {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.bg-standard-leggero {
+  background-color: rgb(236, 252, 252);
+}
+
+.bg-top {
+  background-image: url(https://img.freepik.com/premium-photo/bright-blue-geometric-modern-design-template_665346-4755.jpg);
+}

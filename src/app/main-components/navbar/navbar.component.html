@@ -1,0 +1,48 @@
+<header class="d-flex justify-content-center py-3 shadow-sm bg-white">
+  <ul class="nav nav-pills">
+    <li class="nav-item mx-2">
+      <a
+        routerLink="/home"
+        class="btn py-1 fw-bolder"
+        routerLinkActive="activeNav"
+        aria-current="page"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item mx-2">
+      <a
+        routerLink="/fatture"
+        class="btn py-1 fw-bolder"
+        routerLinkActive="activeNav"
+        >Fatture</a
+      >
+    </li>
+    <li class="nav-item mx-2">
+      <a
+        routerLink="/clienti"
+        class="btn py-1 fw-bolder"
+        routerLinkActive="activeNav"
+        >Clienti</a
+      >
+    </li>
+    <li *ngIf="!isLoggedIn" class="nav-item mx-2">
+      <a
+        routerLink="/auth/login"
+        class="btn py-1 fw-bolder"
+        routerLinkActive="activeNav"
+        >LogIn</a
+      >
+    </li>
+    <li *ngIf="!isLoggedIn" class="nav-item mx-2">
+      <a
+        routerLink="/auth/register"
+        class="btn py-1 fw-bolder"
+        routerLinkActive="activeNav"
+        >Register</a
+      >
+    </li>
+    <li *ngIf="isLoggedIn" (click)="logout()" class="nav-item mx-2">
+      <a class="btn py-1 fw-bolder" routerLinkActive="activeNav">Log out</a>
+    </li>
+  </ul>
+</header>

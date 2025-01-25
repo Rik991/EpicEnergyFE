@@ -1,0 +1,114 @@
+<div class="container py-5 d-flex justify-content-center">
+  <form [formGroup]="form" class="form" (ngSubmit)="register()">
+    <p class="title">Registrati</p>
+    <p class="message">
+      Registrati ora e ottieni l'accesso completo alla nostra app.
+    </p>
+
+    <div class="flex">
+      <label>
+        <input
+          class="input"
+          type="text"
+          formControlName="nome"
+          placeholder=""
+          required
+        />
+        <span>Nome</span>
+        <div
+          *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched"
+          class="text-danger"
+        >
+          Il nome è richiesto
+        </div>
+      </label>
+
+      <label>
+        <input
+          class="input"
+          type="text"
+          formControlName="cognome"
+          placeholder=""
+          required
+        />
+        <span>Cognome</span>
+        <div
+          *ngIf="form.get('cognome')?.invalid && form.get('cognome')?.touched"
+          class="text-danger"
+        >
+          Il cognome è richiesto
+        </div>
+      </label>
+    </div>
+
+    <label>
+      <input
+        class="input"
+        type="text"
+        formControlName="username"
+        placeholder=""
+        required
+      />
+      <span>Username</span>
+      <div
+        *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+        class="text-danger"
+      >
+        Lo username è richiesto
+      </div>
+    </label>
+
+    <label>
+      <input
+        class="input"
+        type="email"
+        formControlName="email"
+        placeholder=""
+        required
+      />
+      <span>Email</span>
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        class="text-danger"
+      >
+        Inserisci un'email valida
+      </div>
+    </label>
+
+    <label>
+      <input
+        class="input"
+        type="password"
+        formControlName="password"
+        placeholder=""
+        required
+      />
+      <span>Password</span>
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="text-danger"
+      >
+        Inserisci una password di almeno 6 caratteri
+      </div>
+    </label>
+
+    <span>Avatar</span>
+    <label>
+      <input
+        class="input"
+        type="file"
+        id="avatar"
+        (change)="onFileChange($event)"
+        accept="image/*"
+      />
+    </label>
+
+    <button type="submit" class="submit" [disabled]="form.invalid">
+      Conferma
+    </button>
+
+    <p class="signin">
+      Sei già registrato? <a routerLink="/auth/login">Accedi</a>
+    </p>
+  </form>
+</div>

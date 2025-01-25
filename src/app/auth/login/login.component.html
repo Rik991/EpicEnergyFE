@@ -1,0 +1,43 @@
+<div class="container text-center py-5 align-items-center">
+  <div class="login-box">
+    <p>Login</p>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="user-box">
+        <input type="text" formControlName="username" required="" />
+        <label>Username</label>
+        <div
+          *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+          class="text-danger"
+        >
+          Inserisci uno username valido.
+        </div>
+      </div>
+      <div class="user-box">
+        <input type="password" formControlName="password" required="" />
+        <label>Password</label>
+        <div
+          *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+          class="text-danger"
+        >
+          La password è richiesta.
+        </div>
+      </div>
+      <a
+        href="#"
+        (click)="onSubmit($event)"
+        class="submit-button"
+        [class.disabled]="form.invalid"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+    <p>
+      Non hai un account?
+      <a routerLink="/auth/register" class="a2">Registrati ora!</a>
+    </p>
+  </div>
+</div>
